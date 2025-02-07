@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atharva's Project Portfolio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1F1C2C, #4f4870);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Main container styling */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease-out;
+    }
+    .container h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .container p.subtext {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+    /* Projects Grid */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .project {
+      flex: 0 0 220px;
+      padding: 20px;
+      background: rgba(139, 133, 122,);
+      border: 1px solid rgb(130, 133, 224);
+      border-radius: 10px;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-align: left;
+    }
+    .project:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+    .project .title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .project .desc {
+      font-size: 0.95rem;
+      line-height: 1.3;
+      color: #ddd;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Content Container -->
+  <div class="container">
+    <h1>I'm Atharva.</h1>
+    <p class="subtext">I like to solve problems by code.</p>
+    <div class="projects">
+      <!-- Example Project Tile -->
+      <a class="project" href="https://selflo.app" target="_blank">
+        <div class="title">Selflo</div>
+        <div class="desc">An app that helps you stay productive and crush your goals.</div>
+      </a>
+      <a class="project" href="https://color-crafterz.vercel.app/" target="_blank">
+        <div class="title">Color Crafterz</div>
+        <div class="desc">A drawing canvas where you are free to dray anything you want.</div>
+      </a>
+      <a class="project" href="https://shoppers-go.vercel.app" target="_blank">
+        <div class="title">Shoppers Go</div>
+        <div class="desc">Shopping cart list, which helps you buy only what you need.</div>
+      </a>
+      <a class="project" href="https://endlessrunner.vercel.app/" target="_blank">
+        <div class="title">Endless Runner</div>
+        <div class="desc">An endless runner where you press the up arrow to jump, otherwise you'll lose if the obtacles hit you.</div>
+      </a>
+      <a class="project" href="https://postcard-creator.vercel.app" target="_blank">
+        <div class="title">Posto</div>
+        <div class="desc">Create memorable postcards which you can share with friends</div>
+      </a>
+      <a class="project" href="https://Agent-bsky.vercel.app" target="_blank">
+        <div class="title">Agent-BSKY v1</div>
+        <div class="desc">Give a link of a Bluesky post and it will turn it into famous people's voice.</div>
+      </a>
+      <a class="project" href="https://Agent-bsky-land.vercel.app" target="_blank">
+        <div class="title">Agent-BSKY v2</div>
+        <div class="desc">An agent which posts latest news and replies on behalf of me in Bluesky.</div>
+      </a>
+      <!-- Add more project tiles as needed -->
+    </div>
+    <footer>
+      <p>© 2025 Atharva's Project Portfolio</p>
+    </footer>
+  </div>
+
+  <script>
+    // Add subtle 3D parallax tilt effect to the container
+    const container = document.querySelector('.container');
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth, innerHeight } = window;
+      const rotateY = ((e.clientX / innerWidth) - 0.5) * 20;  // Adjust intensity as needed
+      const rotateX = ((e.clientY / innerHeight) - 0.5) * -20;
+      container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    document.addEventListener('mouseleave', () => {
+      container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+  </script>
+</body>
+</html>
